@@ -1,0 +1,22 @@
+---
+title: "Tutorial - Introduction"
+output: html_document
+---
+
+```{r pressure, echo = FALSE, fig.cap = "What RStudio should look like on opening a new Notebook - LSHTM tutorial RSTEPH", out.width = '100%'}
+knitr::include_graphics("/Users/db/Documents/Data Science/lshtm R tutorials/panes.PNG")
+```
+
+```{r}
+#--- Find out the average life expectancy in 2007 by continent
+library(gapminder)
+library(tidyverse)
+```
+
+```{r}
+#--- 
+gapminder %>% 
+  filter(year == 2007) %>% 
+  group_by(continent) %>% 
+  summarise(mean = mean(lifeExp))
+```
